@@ -9,3 +9,9 @@ const generateToken = (email)=>{
 }
 
 export default generateToken;
+
+export const adminToken = (user) => {
+    return jsonewebToken.sign({ data: user.id, role: user.role }, process.env.SE, {
+      expiresIn: "1d",
+    });
+  };
